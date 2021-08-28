@@ -35,6 +35,8 @@ function Home() {
     return (
         <>
             Hello world!
+            {process.env.API_URL}
+            {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
         </>
     )
 }
