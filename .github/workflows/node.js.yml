@@ -19,10 +19,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+      env:
+        NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS}}
+        API_URL: ${{secrets.API_URL}}
     - run: npm run build --if-present
-      env:
-        NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
-        API_URL: ${{ secrets.API_URL }}
     - run: pm2 restart mc_nextjs
-      env:
-        CI: true
