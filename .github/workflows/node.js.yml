@@ -23,4 +23,4 @@ jobs:
       env:
         NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS}}
         NEXT_PUBLIC_API_URL: ${{secrets.NEXT_PUBLIC_API_URL}}
-    - run: pm2 restart mc_nextjs
+    - run: pm2 restart pm2.json
