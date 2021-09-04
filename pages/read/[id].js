@@ -21,10 +21,17 @@ function Read({postData}) {
 					{pack.mc_addon.pack_name} – {pack.mc_addon.pack_type}-pack for Minecraft Bedrock and PE {pack.mc_addon.pack_engine_version}+
 				</title>
 				<meta name={"description"} content={pack.mc_addon.pack_description}/>
+
+				<meta property="og:type" content="website"/>
+				<meta property="og:title" content={pack.mc_addon.pack_name + ' – ' + pack.mc_addon.pack_type + '-pack for Minecraft Bedrock and PE ' + pack.mc_addon.pack_engine_version + '+'}/>
+				<meta property="og:description" content={pack.mc_addon.pack_description}/>
+				<meta property="og:url" content={process.env.NEXT_PUBLIC_SITE_URL + '/read/' + pack.mc_addon.id}/>
+				<meta property="og:site_name" content="MinecraftMods.xyz"/>
+				<meta property="og:locale" content="en_GB"/>
 			</Head>
 
 			<div className={"content"}>
-				<PostFull key={pack.id} pack={pack}/>
+				<PostFull key={pack.mc_addon.id} pack={pack}/>
 			</div>
 		</Layout>
 	)
