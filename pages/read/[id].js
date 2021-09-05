@@ -4,7 +4,7 @@ import Error from 'next/error'
 import Layout from "../../src/components/layout"
 import Head from "next/head"
 
-function Read({postData}) {
+function Read({postData, ogImageData}) {
 	const pack = postData.data.addon
 	const status = postData.status
 
@@ -28,6 +28,9 @@ function Read({postData}) {
 				<meta property="og:url" content={process.env.NEXT_PUBLIC_SITE_URL + '/read/' + pack.mc_addon.id}/>
 				<meta property="og:site_name" content="MinecraftMods.xyz"/>
 				<meta property="og:locale" content="en_GB"/>
+				{(ogImageData.status.error === false) ? (
+					<meta property="og:image" content={process.env.NEXT_PUBLIC_API_URL + '/uploads/og_images/' + ogImageData.data.image}/>
+				) : null}
 			</Head>
 
 			<div className={"content"}>
@@ -40,14 +43,18 @@ function Read({postData}) {
 export async function getServerSideProps({query}) {
 	const id = query.id
 
-	console.log(id)
-
 	const post = await fetch(makeApiUrl(`/mods/addon/${id}`))
 	const postData = await post.json()
 
+	const ogImage = await fetch(makeApiUrl(`/og/image/${id}`))
+	const ogImageData = await ogImage.json()
+
+	console.log(ogImageData)
+
 	return {
 		props: {
-			postData
+			postData,
+			ogImageData
 		}
 	}
 }
