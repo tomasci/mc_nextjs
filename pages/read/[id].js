@@ -49,8 +49,6 @@ export async function getServerSideProps({query}) {
 	const ogImage = await fetch(makeApiUrl(`/og/image/${id}`))
 	const ogImageData = await ogImage.json()
 
-	console.log(ogImageData)
-
 	return {
 		props: {
 			postData,

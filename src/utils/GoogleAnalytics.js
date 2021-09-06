@@ -8,4 +8,5 @@ export const pageView = (url) => {
 // log specific events happening.
 export const event = ({ action, params }) => {
 	window.gtag('event', action, params)
+	ym(process.env.NEXT_PUBLIC_YANDEX_METRIKA, 'reachGoal', action.toString())
 }
