@@ -3,12 +3,14 @@ export const pageView = (url) => {
 	window.gtag('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
 		page_path: url,
 	})
+
+	ym(process.env.NEXT_PUBLIC_YANDEX_METRIKA, 'hit', url)
 }
 
 // log specific events happening.
 export const event = ({ action, params }) => {
 	window.gtag('event', action, params)
-	ym(process.env.NEXT_PUBLIC_YANDEX_METRIKA, 'reachGoal', action.toString())
+	ym(process.env.NEXT_PUBLIC_YANDEX_METRIKA, 'reachGoal', action.toString(), params)
 }
 
 //
