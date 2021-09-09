@@ -8,6 +8,11 @@ function Nav() {
 					Main page
 				</a>
 			</Link>
+			<Link href={"/docs/install"}>
+				<a>
+					How to install mods
+				</a>
+			</Link>
 			{/*<a href="#">For creators</a>*/}
 			{/*<a href="#">How to install mods</a>*/}
 		</div>

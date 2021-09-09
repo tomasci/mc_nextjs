@@ -387,6 +387,29 @@ $basicFontSize: 16px;
     padding: 32px 0;
     font-size: 14px;
   }
+
+  .docs {
+    .video {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+
+      video, iframe {
+        /* override other styles to make responsive */
+        //width: 100% !important;
+        //height: auto !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-install {
+      //
+    }
+  }
 }
 
 $adminBackground: #F2F2F2;
@@ -644,10 +667,6 @@ $adminBorderColor: #D5D5D5;
     }
   }
 }
-
-
-
-
 
 
 
