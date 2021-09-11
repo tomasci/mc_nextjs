@@ -3,15 +3,14 @@ import PostFull from "../../src/components/Posts/PostFull"
 import Error from 'next/error'
 import Layout from "../../src/components/layout"
 import Head from "next/head"
+import SysError from "../../src/components/Error/Error"
 
 function Read({postData, ogImageData}) {
 	const pack = postData.data.addon
 	const status = postData.status
 
 	if (status.error === true) {
-		return (
-			<Error statusCode={status.code}/>
-		)
+		return <SysError statusCode={status.code} message={status.message}/>
 	}
 
 	return (

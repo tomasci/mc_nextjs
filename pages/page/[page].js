@@ -1,9 +1,9 @@
 import IndexPosts from "../../src/components/Posts/IndexPosts"
 import makeApiUrl from "../../src/api"
 const {useRouter} = require("next/router")
-import Error from 'next/error'
 import Layout from "../../src/components/layout"
 import Head from 'next/head'
+import SysError from "../../src/components/Error/Error"
 
 function Page({postsData}) {
 	const router = useRouter()
@@ -11,7 +11,7 @@ function Page({postsData}) {
 	const status = postsData.status
 
 	if (status.error === true) {
-		return <Error statusCode={status.code}/>
+		return <SysError statusCode={status.code} message={status.message}/>
 	}
 
 	return (

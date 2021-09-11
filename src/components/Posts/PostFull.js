@@ -13,15 +13,25 @@ import * as ga from '../../utils/GoogleAnalytics'
 
 function PostFull({pack}) {
 	const trackDownload = (id, packName, packType, packPath) => {
-		ga.event({
+		ga.download({
 			action: "download",
-			params : {
+			params: {
 				packID: id,
 				packName: packName,
 				packType: packType,
 				packPath: packPath
 			}
 		})
+
+		// ga.event({
+		// 	action: "download",
+		// 	params : {
+		// 		packID: id,
+		// 		packName: packName,
+		// 		packType: packType,
+		// 		packPath: packPath
+		// 	}
+		// })
 	}
 
 	return (
