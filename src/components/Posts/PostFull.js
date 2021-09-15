@@ -1,11 +1,3 @@
-// import {useEffect} from "react"
-// import Image from 'next/image'
-//
-// const ImageLoader = ({ src, width, quality }) => {
-// 	return `http://localhost:3000/uploads/extracted/${src}?w=${width}&q=${quality || 75}`
-// }
-
-import {useRouter} from "next/router"
 import GoBack from "../GoBack"
 import {apiUrl} from "../../api"
 
@@ -22,16 +14,6 @@ function PostFull({pack}) {
 				packPath: packPath
 			}
 		})
-
-		// ga.event({
-		// 	action: "download",
-		// 	params : {
-		// 		packID: id,
-		// 		packName: packName,
-		// 		packType: packType,
-		// 		packPath: packPath
-		// 	}
-		// })
 	}
 
 	return (

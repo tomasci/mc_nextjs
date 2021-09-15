@@ -1,8 +1,15 @@
 import Link from 'next/link'
+import Head from "next/head"
 
 function SysError({statusCode, message}) {
 	return (
 		<div className={"app"}>
+			<Head>
+				<title>
+					{statusCode} – {statusCode === 404 ? 'Not Found' : statusCode === 500 ? 'Internal Server Error' : 'Something went wrong'} – MinecraftMods.xyz
+				</title>
+			</Head>
+
 			<h1>
 				{statusCode} – {statusCode === 404 ? 'Not Found' : statusCode === 500 ? 'Internal Server Error' : 'Something went wrong'}
 			</h1>
