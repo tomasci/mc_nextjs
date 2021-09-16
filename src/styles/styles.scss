@@ -12,6 +12,28 @@
   }
 }
 
+$red: #EB5757;
+$orange: #F2994A;
+$yellow: #F2C94C;
+$darkGreen: #219653;
+$green: #27AE60;
+$lightGreen: #6FCF97;
+$blue: #2F80ED;
+$lightBlue: #2D9CDB;
+$cyan: #56CCF2;
+$purple: #9B51E0;
+$lightPurple: #BB6BD9;
+$white: #ffffff;
+$brightGreen: #baf73c;
+$brightBlue: #00ffff;
+$brightPink: #ff00ff;
+$brightYellow: #ffd700;
+$brightOrange: #ff4500;
+$brightRed: #ff0000;
+
+$colorList: $red, $orange, $yellow, $darkGreen, $green, $lightGreen, $blue, $lightBlue, $cyan,
+        $purple, $lightPurple, $white, $brightGreen, $brightBlue, $brightPink, $brightYellow, $brightOrange, $brightRed;
+
 body {
   margin: 0;
   padding: 0;
@@ -267,6 +289,150 @@ $basicFontSize: 16px;
                     margin-left: 8px;
                     user-select: none;
                     //border: 1px solid rgba(#000, .025);
+                  }
+                }
+              }
+            }
+
+            .recipes {
+              background: rgba(#000, .05);
+              border-radius: 4px;
+              padding: 8px;
+
+              .container {
+                .new {
+                  span {
+                    font-weight: 700;
+                    color: white;
+                    background: darken(red, 10%);
+                    padding: 4px;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    border-radius: 4px;
+                  }
+                }
+
+                details {
+                  //outline: none;
+
+                  summary {
+                    cursor: pointer;
+                    outline: none;
+                  }
+                }
+
+                .list {
+                  margin-top: 8px;
+
+                  .recipe, details {
+                    background: rgba(#fff, .5);
+                    border: 1px solid rgba(#000, .15);
+                    padding: 4px;
+                    border-radius: 4px;
+                    margin-bottom: 8px;
+
+                    &:last-child {
+                      margin-bottom: 0;
+                    }
+
+                    ul {
+                      margin: 0;
+                      padding: 0;
+
+                      li {
+                        list-style-type: none;
+                        margin-bottom: 8px;
+                        //.c_0, .c_1, .c_2, .c_3, .c_4, .c_5, .c_6, .c_7, .c_8 {
+                        //  content: "";
+                        //  width: 10px;
+                        //  height: 10px;
+                        //  display: inline-block;
+                        //}
+
+                        .c {
+                          content: "";
+                          width: 10px;
+                          height: 10px;
+                          display: inline-block;
+
+                          @for $i from 1 through length($colorList) {
+                            &_#{$i} {
+                              background: nth($colorList, $i)
+                            }
+                          }
+                        }
+
+                        .pieces {
+                          background: $cyan;
+                          color: white;
+                          font-weight: 700;
+                          padding: 2px 4px;
+                          font-size: 14px;
+                          border-radius: 4px;
+                        }
+                      }
+                    }
+
+                    .scheme {
+                      background: rgba(#000, .5);
+                      width: fit-content;
+                      padding: 16px;
+                      //display: flex;
+                      //justify-content: center;
+                      //align-items: center;
+                      //flex-flow: column;
+
+                      .slot {
+                        width: 50px;
+                        height: 50px;
+                        display: inline-block;
+                        content: "";
+                        border: 1px solid rgba(#000, .5);
+                        margin: 4px;
+
+                        @for $i from 1 through length($colorList) {
+                          &_#{$i} {
+                            background: nth($colorList, $i)
+                          }
+                        }
+
+                        //&_0 {
+                        //  background: red;
+                        //}
+                        //
+                        //&_1 {
+                        //  background: blue;
+                        //}
+                        //
+                        //&_2 {
+                        //  background: blue;
+                        //}
+                        //
+                        //&_3 {
+                        //  background: blue;
+                        //}
+                        //
+                        //&_4 {
+                        //  background: blue;
+                        //}
+                        //
+                        //&_5 {
+                        //  background: blue;
+                        //}
+                        //
+                        //&_6 {
+                        //  background: blue;
+                        //}
+                        //
+                        //&_7 {
+                        //  background: blue;
+                        //}
+                        //
+                        //&_8 {
+                        //  background: blue;
+                        //}
+                      }
+                    }
                   }
                 }
               }

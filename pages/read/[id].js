@@ -5,7 +5,7 @@ import Layout from "../../src/components/layout"
 import Head from "next/head"
 import SysError from "../../src/components/Error/Error"
 
-function Read({postData, ogImageData}) {
+function Read({postData, ogImageData, recipesData}) {
 	const pack = postData.data.addon
 	const status = postData.status
 
@@ -33,7 +33,7 @@ function Read({postData, ogImageData}) {
 			</Head>
 
 			<div className={"content"}>
-				<PostFull key={pack.mc_addon.id} pack={pack}/>
+				<PostFull key={pack.mc_addon.id} pack={pack} recipes={recipesData}/>
 			</div>
 		</Layout>
 	)
@@ -48,10 +48,14 @@ export async function getServerSideProps({query}) {
 	const ogImage = await fetch(makeApiUrl(`/og/image/${id}`))
 	const ogImageData = await ogImage.json()
 
+	const recipes = await fetch(makeApiUrl(`/mods/addon/recipes/${id}`))
+	const recipesData = await recipes.json()
+
 	return {
 		props: {
 			postData,
-			ogImageData
+			ogImageData,
+			recipesData
 		}
 	}
 }

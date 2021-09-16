@@ -1,5 +1,10 @@
 // log the page view with their URL
 export const pageView = (url) => {
+	if(process.env.NEXT_PUBLIC_NODE_ENV !== "production") {
+		console.log('GA/YM: pageView')
+		return
+	}
+
 	window.gtag('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
 		page_path: url,
 	})
@@ -20,6 +25,11 @@ export const pageView = (url) => {
 // }
 
 export const download = ({ action, params }) => {
+	if(process.env.NEXT_PUBLIC_NODE_ENV !== "production") {
+		console.log('GA/YM: download')
+		return
+	}
+
 	// where file is downloaded
 	let pageUrl = process.env.NEXT_PUBLIC_SITE_URL + '/read/' + params.packID
 
