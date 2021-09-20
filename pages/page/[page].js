@@ -20,7 +20,7 @@ function Page({postsData}) {
 				<title>
 					MinecraftMods.xyz – Page {currentPage}
 				</title>
-				<meta name={"description"} content={"Page 2 at MinecraftMods.xyz – the Minecraft Bedrock and Minecraft PE mods database"}/>
+				<meta name={"description"} content={`Page ${currentPage} at MinecraftMods.xyz – the Minecraft Bedrock and Minecraft PE mods database`}/>
 			</Head>
 
 			<div className={"content"}>
