@@ -30,25 +30,24 @@ function Install() {
 				<h2>
 					How to install mods on iOS and Android?
 				</h2>
-				<p>
-					<ol>
-						<li>
-							Download and install Minecraft from AppStore or GooglePlay
-						</li>
-						<li>
-							Download any addon from this site
-						</li>
-						<li>
-							<b>On Android</b> just select your file in your default file manager and click open with, then click "Minecraft".
-						</li>
-						<li>
-							<b>On iOS</b> the default "Files" will not import modification correct. Every time you try - you will have import error. So download any other file manager from AppStore, move mods there and from this app tap share, and open file in Minecraft.
-						</li>
-						<li>
-							Activate mod globally with settings from main screen or in local world with changing it settings through editing the world.
-						</li>
-					</ol>
-				</p>
+
+				<ol>
+					<li>
+						Download and install Minecraft from AppStore or GooglePlay
+					</li>
+					<li>
+						Download any addon from this site
+					</li>
+					<li>
+						<b>On Android</b> just select your file in your default file manager and click open with, then click "Minecraft".
+					</li>
+					<li>
+						<b>On iOS</b> the default "Files" will not import modification correct. Every time you try - you will have import error. So download any other file manager from AppStore, move mods there and from this app tap share, and open file in Minecraft.
+					</li>
+					<li>
+						Activate mod globally with settings from main screen or in local world with changing it settings through editing the world.
+					</li>
+				</ol>
 			</div>
 		</Layout>
 	)

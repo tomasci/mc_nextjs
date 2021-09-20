@@ -13,6 +13,11 @@ function Nav() {
 					How to install mods
 				</a>
 			</Link>
+			<Link href={"/docs/minecraft-ios-import-failed-fix"}>
+				<a>
+					"import failed" iOS fix
+				</a>
+			</Link>
 			{/*<a href="#">For creators</a>*/}
 			{/*<a href="#">How to install mods</a>*/}
 		</div>

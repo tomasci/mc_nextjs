@@ -139,11 +139,27 @@ $basicFontSize: 16px;
     .nav {
       a {
         color: green;
-        margin-right: 8px;
         font-size: $basicFontSize;
+        text-decoration: underline;
+        vertical-align: center;
 
         &:last-child {
           margin-right: 0;
+        }
+
+        &:after {
+          display: inline-block;
+          content: "/";
+          margin: -4px 8px;
+          text-decoration: none;
+          overflow: hidden;
+          color: rgba(#000, .3);
+        }
+
+        &:last-child {
+          &:after {
+            display: none;
+          }
         }
       }
     }
