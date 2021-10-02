@@ -24,7 +24,7 @@ export const pageView = (url) => {
 // 	ym(process.env.NEXT_PUBLIC_YANDEX_METRIKA, 'file', refererUrl)
 // }
 
-export const download = ({ action, params }) => {
+export const download = (action, params) => {
 	if(process.env.NEXT_PUBLIC_NODE_ENV !== "production") {
 		console.log('GA/YM: download')
 		return

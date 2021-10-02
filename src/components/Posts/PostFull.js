@@ -5,15 +5,15 @@ import * as ga from '../../utils/GoogleAnalytics'
 
 function PostFull({pack, recipes}) {
 	const trackDownload = (id, packName, packType, packPath) => {
-		ga.download({
-			action: "download",
-			params: {
+		ga.download(
+			"download",
+			{
 				packID: id,
 				packName: packName,
 				packType: packType,
 				packPath: packPath
 			}
-		})
+		)
 	}
 
 	return (
