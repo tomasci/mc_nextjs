@@ -71,9 +71,11 @@ function PostFull({pack, recipes}) {
 					</p>
 				</div>
 
+				{
+					(recipes.status.error) ? null : (
 				<div className="recipes">
-					{
-						(recipes.status.error) ? null : (
+					{/*{*/}
+					{/*	(recipes.status.error) ? null : (*/}
 							<div className={"container"}>
 								<div className="new">
 									<span>
@@ -126,9 +128,11 @@ function PostFull({pack, recipes}) {
 									})}
 								</details>
 							</div>
-						)
-					}
+					{/*	)*/}
+					{/*}*/}
 				</div>
+					)
+				}
 			</div>
 
 			<GoBack/>
