@@ -1,34 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MinecraftMods.xyz – frontend
+This project is more likely not a real site, but something like a testing ground. On it, I try new technologies, develop some strange things and features, which were not found anywhere before, in the sense, on such sites. The backend is an api and exchanges data with the client in json format, written in Typescript, and is based on express. The client is using Redux.js, but not all functionality has been published or implemented, so it is may be not be visible.
 
-## Getting Started
+Technologies used (client):
+`NextJS (React, Javascript), Sass (Scss), Redux.js (redux-toolkit)`
 
-First, run the development server:
+Technologies used (server):
+`typescript, express, jsonwebtoken, canvas, bcrypt, prisma, prettier, eslint`
 
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Features:
+- the backend uses a server-side Canvas to render pictures with text and icons for the OpenGraph Image, while the picture is generated once upon the first page request
+- the functionality of reading game modification files has been implemented, which allows you to automatically display descriptions of modifications, their names, versions, versions of the game, crafting recipes and in the future other features on the site
+- modern Typescript ORM - Prisma is used to work with the database
+- the use of bcrypt made it possible to achieve secure storage of user passwords in the database
+- prettier used to achieve cleanliness of the code, and eslint is to avoid some simple mistakes
+- SSR
